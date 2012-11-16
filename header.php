@@ -18,19 +18,34 @@
 </head>
 
 <body <?php body_class(); ?>>
+    
+    <?php /* As of Nov. 2012, we are still supporting back to IE7. Sigh... */ ?>
+
 	<!--[if lt IE 7]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 
 <header class="full-width">
 
-	<?php if (is_front_page()) { ?>
-	    <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+	<?php 
+    // We show an h1 for site title on the front page, h3 everywhere 
+    // else. On every other page, the page title gets the h1.
+
+    if (is_front_page()) { ?>
+	    <h1 id="site-title">
+            <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a>
+        </h1>
 	<?php } else { ?>
-	    <h3 class="site-title"><?php bloginfo('name'); ?></h3>
+	    <h3 id="site-title">
+            <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a>
+        </h3>
 	<?php }
 
-	wp_nav_menu(); ?>    
+	wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'container' => false,
+        'fallback_cb' => 'wp_page_menu',
+    ) ); ?>    
 
 </header>
 

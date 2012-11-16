@@ -22,7 +22,21 @@
 
 * { @include box-sizing(border-box); }
 
-a { @include transit; }
+a, a:visited { 
+
+	&:active,
+	&:hover {
+
+	}
+
+	header &,
+	#main &,
+	footer & {
+		// Include transition (exclude links in the admin bar)
+		@include transit; 
+	}
+}
+
 
 
 // ----- layout
@@ -33,4 +47,15 @@ $width: 1200px;
 	margin: 0 auto;
 	max-width: $width;
 	padding: 0 20px;
+}
+
+
+// ----- header
+
+#site-title {
+	// By default, style site title as if it
+	// were always h1 (even though it's h3 on every
+	// page except home page)
+	font-size: 2em;
+	margin: 0.67em 0;
 }

@@ -1,4 +1,9 @@
-<?php get_header(); the_post(); ?>
+<?php 
+/*
+Template Name: Sample Template
+*/
+get_header(); 
+the_post(); ?>
 
 <article <?php post_class(); ?>>
 	<h1><?php the_title(); ?></h1>
