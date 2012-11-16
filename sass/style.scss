@@ -1,0 +1,21 @@
+// ----- imports
+
+@import 'compass';
+
+// ----- colors
+
+// ----- mixins
+
+// ----- styles
+
+* {
+	@include box-sizing(border-box);
+}
+
+// ----- layout
+$width: 1200px;
+
+.full-width {
+	max-width: $width;
+	padding: 0 20px;
+}
