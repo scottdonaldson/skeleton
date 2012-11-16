@@ -2,20 +2,35 @@
 
 @import 'compass';
 
+
 // ----- colors
+
 
 // ----- mixins
 
-// ----- styles
-
-* {
-	@include box-sizing(border-box);
+@mixin tight {
+	margin: 0;
+	padding: 0;
 }
 
+@mixin transit {
+	@include transition(0.2s ease-in-out);
+}
+
+
+// ----- styles
+
+* { @include box-sizing(border-box); }
+
+a { @include transit; }
+
+
 // ----- layout
+
 $width: 1200px;
 
 .full-width {
+	margin: 0 auto;
 	max-width: $width;
 	padding: 0 20px;
 }
