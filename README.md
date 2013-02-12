@@ -1,11 +1,10 @@
 # Parsley & Sprouts - Skeleton Theme for WordPress
 
-## Includes
-* jQuery 1.8.2 (from Google CDN)
-* Modernizr 2.5.3 (custom build)
+### Includes
+* Normalize CSS 1.0.1 (IE7+ support)
+* jQuery 1.8.3 (from Google CDN)
+* Modernizr 2.6.2 (custom build)
 
-## Plugins needed
-* SEO Ultimate
-
-## Plugins recommended
+### Plugins recommended
 * Advanced Custom Fields
+* SEO Ultimate

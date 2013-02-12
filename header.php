@@ -9,7 +9,9 @@
     
     <title><?php wp_title(''); ?></title>
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    
+    <link rel="author" href="<?php echo bloginfo('template_url'); ?>/humans.txt">
 
     <link rel="stylesheet" href="<?php echo bloginfo('template_url'); ?>/style.css">
     <link rel="stylesheet" href="<?php echo bloginfo('template_url'); ?>/css/style.css">
@@ -18,8 +20,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
     
-    <?php /* As of Nov. 2012, we are still supporting back to IE7. Sigh... */ ?>
+    <?php /* As of Feb. 2013, we are still supporting IE7. Sigh... */ ?>
 
 	<!--[if lt IE 7]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -39,13 +42,18 @@
 	    <h3 id="site-title">
             <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a>
         </h3>
-	<?php }
+	<?php } 
+    if (get_bloginfo('description')) { ?>
+        <p id="site-description"><?php bloginfo('description'); ?></p>
+    <?php } ?>
 
-	wp_nav_menu( array(
-        'theme_location' => 'primary',
-        'container' => false,
-        'fallback_cb' => 'wp_page_menu',
-    ) ); ?>    
+    <nav role="navigation">
+    	<?php wp_nav_menu( array(
+            'theme_location' => 'primary',
+            'container' => false,
+            'fallback_cb' => 'wp_page_menu',
+        ) ); ?>   
+    </nav> 
 
 </header>
 
