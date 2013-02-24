@@ -57,4 +57,4 @@
 
 </header>
 
-<div id="main" role="main" class="full-width">
+<main class="full-width">

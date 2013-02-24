@@ -1,4 +1,4 @@
-</div><!-- #main -->   
+</main>
 
 <footer class="full-width">
 	<p class="alignleft">&copy; <?php echo date('Y').'&nbsp;'; bloginfo('name'); ?></p>
