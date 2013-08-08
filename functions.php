@@ -7,8 +7,7 @@ register_nav_menu('primary', 'Primary Menu');
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
-   // Latest WP-compatible jQuery is 1.8.3
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js", false, null);
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 }
 
@@ -35,7 +34,7 @@ function left_admin_footer_text_output($text) {
 }
 add_filter('update_footer', 'right_admin_footer_text_output', 11); //right side
 function right_admin_footer_text_output($text) {
-    $text = '&copy '.date('Y').'.';
+    $text = '&copy; '.date('Y').'.';
     return $text;
 }
 

@@ -22,9 +22,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
     
-    <?php /* As of Feb. 2013, we are still supporting IE7. Sigh... */ ?>
+    <?php /* As of Jul. 2013, we do not support IE7! */ ?>
 
-	<!--[if lt IE 7]>
+	<!--[if lt IE 8]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
 

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+(function($){
 
 	// Declare variables
 	var body = $('body');
@@ -7,4 +7,4 @@ $(document).ready(function(){
 	// And then do stuff
 
 
-});
+})(jQuery);
