@@ -10,3 +10,32 @@ if (!(window.console && console.log)) {
         }
     }());
 }
+
+(function($){
+	// Create an array -- groups -- with the number of distinct .same-height groups
+	var groups = [],
+		sameHeight = $('.same-height');
+	$('.same-height[data-group]').each(function(){
+		$this = $(this);
+		if ($.inArray($this.attr('data-group'), groups) === -1)
+			groups.push($this.attr('data-group'));
+	});
+	function makeSameHeight(resize) {
+		for (var i = 0; i < groups.length; i++) {
+			sameHeight = $('.same-height[data-group="' + groups[i] + '"]');
+			targetHeight = 0;
+			sameHeight.height('auto').each(function() {
+				$this = $(this);
+				if (!resize) { // needs outerHeight() initially, then height() on resizing
+					targetHeight = $this.outerHeight() > targetHeight ? $this.outerHeight() : targetHeight;
+				} else {
+					targetHeight = $this.height() > targetHeight ? $this.height() : targetHeight;
+				}
+			});
+			sameHeight.height(targetHeight);
+		}
+	}
+	if (sameHeight.length > 0)
+		makeSameHeight(false);
+		$(window).on('load resize', makeSameHeight);
+})(jQuery);
