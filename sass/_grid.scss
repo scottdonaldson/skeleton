@@ -1,0 +1,8 @@
+.first { margin-left: 0 !important; margin-top: 0 !important; }
+.last { margin-right: 0 !important; margin-bottom: 0 !important; }
+
+$gutter_width: 4%;
+
+.half {
+	width: 50% - 0.5 * $gutter_width;
+}

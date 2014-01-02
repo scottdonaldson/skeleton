@@ -4,7 +4,7 @@
 
 // ----- imports
 
-@import "compass";
+@import "grid";
 @import "normalize";
 @import "reset";
 @import "colors";
@@ -16,27 +16,19 @@
 	padding: 0;
 }
 
-@mixin transit {
-	@include transition(0.2s ease-in-out);
-}
-
 
 // ----- styles
 
-* { @include box-sizing(border-box); }
+* {
+	box-sizing: border-box;
+	position: relative;
+}
 
 a, a:visited { 
 
 	&:active,
 	&:hover {
 
-	}
-
-	header &,
-	#main &,
-	footer & {
-		// Include transition (exclude links in the admin bar)
-		@include transit; 
 	}
 }
 
